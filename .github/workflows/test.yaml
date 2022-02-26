@@ -1,0 +1,14 @@
+name: Unit test
+on: push
+jobs:
+  test:
+    name: Unit test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: shibataka000/teleport
+          ref: master
+      - name: Unit test
+        run: make test
